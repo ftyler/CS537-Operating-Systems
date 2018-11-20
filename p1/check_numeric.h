@@ -1,0 +1,1 @@
+int isNumeric(const char*);

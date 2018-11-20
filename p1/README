@@ -1,0 +1,15 @@
+We separated this program into three larger modules with a supporting 
+file of check_numeric.c. The larger modules are get_proc_list.c, 
+options_processing.c, and parser.c. 
+
+get_proc_list.c is used to look through the /proc directory to find a 
+list of processes that belongs to the user. 
+
+options_processing.c processes the flag values. It uses the arguments
+from the user input to do so.
+
+parser.c gets strings from lists that are in stat and statm files. It
+parses them via " ". 
+
+check_numeric.c simply ensures that an input is numeric. This is primarily
+used to check the pid.

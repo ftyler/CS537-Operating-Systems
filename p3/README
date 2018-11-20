@@ -1,0 +1,17 @@
+Proj3 README
+
+We have four core modules (we didn't use the names originally given in the proj3 folder). 
+
+parse_txt.c handles parsing the makefile into targets, dependencies, and commands. Blank 
+lines and comments are ignored. It will handle invalid lines.
+
+build_graph.c builds the graph based on targets and dependencies. It will push 'nodes' 
+into a stack, popping them when they are run. 
+
+detect_cycle.c will handle cycles in the graph, quitting with an error if one is detected.
+We use an int "ancestor", setting it to 1 when we traverse to the child nodes and back to
+0 when we traverse back up the graph. If it is already 0, we know there is cyclical 
+dependency.
+
+create_execute.c will create dependencies that need to be made, determining this by whether 
+or not they exist or if the last write was after the target was last modified.

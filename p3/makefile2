@@ -1,0 +1,22 @@
+
+#comment
+
+537make: main.o  parse_txt.o build_graph.o
+	gcc -Wextra -Wall -pthread -g -o 537make main.o parse_txt.o build_graph.o
+
+main.o: main.c
+	gcc -Wextra -Wall -pthread -g -c main.c
+
+parse_txt.o: parse_txt.c
+	gcc -Wextra -Wall -pthread -g -c parse_txt.c
+
+build_graph.o: build_graph.c
+	gcc -Wextra -Wall -pthread -g -c build_graph.c
+
+
+clean:
+	rm -f *.o
+	rm -rf scan-build-out
+
+lastRule:
+	hi
